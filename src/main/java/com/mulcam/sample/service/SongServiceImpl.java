@@ -26,4 +26,9 @@ public class SongServiceImpl implements SongService {
 		return list;
 	}
 
+	@Override
+	public void insertSong(Song song) {
+		songDao.insertSong(song);
+	}
+
 }

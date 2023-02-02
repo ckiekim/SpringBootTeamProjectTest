@@ -49,14 +49,14 @@ public class SongController {
 		return "song/insert";
 	}
 	
-	@ResponseBody
 	@PostMapping("/insert")
 	public String insertResult(Song song, HttpServletRequest req) {
 		int sid = Integer.parseInt(req.getParameter("sid"));
 		String title = req.getParameter("title");
 		String lyrics = req.getParameter("lyrics");
 		Song song2 = new Song(sid, title, lyrics);
-		return song.toString();
+		songService.insertSong(song2);
+		return "redirect:/song/list";
 	}
 	
 }

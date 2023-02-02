@@ -14,4 +14,6 @@ public interface SongService {
 	
 	List<Song2> getSong2List();
 	
+	void insertSong(Song song);
+	
 }
