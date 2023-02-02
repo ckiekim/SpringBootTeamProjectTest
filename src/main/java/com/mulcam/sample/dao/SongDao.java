@@ -2,6 +2,7 @@ package com.mulcam.sample.dao;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
@@ -16,5 +17,8 @@ public interface SongDao {
 	
 	@Select("select sid ssid, title, lyrics from song")
 	public List<Song2> getSong2List();
+	
+	@Insert("insert into song values(default, #{title}, #{lyrics})")
+	void insertSong(Song s);
 	
 }
